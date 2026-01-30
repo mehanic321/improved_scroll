@@ -72,7 +72,7 @@ public class ItemImprovedResourceScroll extends AbstractItemMinecolonies
         final IColonyView colonyView = IColonyManager.getInstance().getColonyView(colonyId, Minecraft.getInstance().level.dimension());
         if (colonyView != null)
         {
-            final IBuildingView buildingView = colonyView.getClientBuildingManager().getBuilding(builderPos);
+            final IBuildingView buildingView = colonyView.getBuilding(builderPos);
             if (buildingView instanceof BuildingBuilder.View builderBuildingView)
             {
                 final String currentHash = getWorkOrderHash(buildingView);
@@ -136,7 +136,7 @@ public class ItemImprovedResourceScroll extends AbstractItemMinecolonies
         if (colonyView != null)
         {
             final BlockPos builderPos = BlockPosUtil.read(compound, TAG_BUILDER);
-            final IBuildingView buildingView = colonyView.getClientBuildingManager().getBuilding(builderPos);
+            final IBuildingView buildingView = colonyView.getBuilding(builderPos);
             if (buildingView instanceof BuildingBuilder.View)
             {
                 final String currentHash = getWorkOrderHash(buildingView);
@@ -161,7 +161,7 @@ public class ItemImprovedResourceScroll extends AbstractItemMinecolonies
       final String hash,
       final Player player)
     {
-        final IBuildingView warehouse = buildingView.getColony().getClientBuildingManager().getBuilding(warehouseBlockPos);
+        final IBuildingView warehouse = buildingView.getColony().getBuilding(warehouseBlockPos);
 
         if (warehouse == null)
         {
@@ -289,7 +289,7 @@ public class ItemImprovedResourceScroll extends AbstractItemMinecolonies
 
                 // 1. Find ANY Building at player position
                 IBuilding building = null;
-                for (IBuilding b : colony.getServerBuildingManager().getBuildings().values()) {
+                for (IBuilding b : colony.getBuildingManager().getBuildings().values()) {
                     net.minecraft.util.Tuple<BlockPos, BlockPos> corners = b.getCorners();
                     BlockPos a = corners.getA();
                     BlockPos bPos = corners.getB();
@@ -306,7 +306,7 @@ public class ItemImprovedResourceScroll extends AbstractItemMinecolonies
                 if (building != null)
                 {
                     final BlockPos builderPos = BlockPosUtil.read(compound, TAG_BUILDER);
-                    final IBuilding builder = colony.getServerBuildingManager().getBuilding(builderPos);
+                    final IBuilding builder = colony.getBuildingManager().getBuilding(builderPos);
                     if (builder instanceof BuildingBuilder)
                     {
                         final BuildingResourcesModule module = builder.getFirstModuleOccurance(BuildingResourcesModule.class);
@@ -431,7 +431,7 @@ public class ItemImprovedResourceScroll extends AbstractItemMinecolonies
         final IColonyView colonyView = IColonyManager.getInstance().getColonyView(colonyId, worldIn.dimension());
         if (colonyView != null)
         {
-            final IBuildingView buildingView = colonyView.getClientBuildingManager().getBuilding(builderPos);
+            final IBuildingView buildingView = colonyView.getBuilding(builderPos);
             if (buildingView instanceof BuildingBuilder.View builderBuildingView)
             {
                 String name = builderBuildingView.getWorkerName();

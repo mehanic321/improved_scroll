@@ -5,6 +5,11 @@ plugins {
 group = 'com.mehanic'
 version = '1.0-SNAPSHOT'
 
+repositories {
+    mavenCentral()
+    maven { url = 'https://maven.minecraftforge.net/' }
+}
+
 java {
     archivesBaseName = 'improved_scroll'
     toolchain.languageVersion = JavaLanguageVersion.of(17)
@@ -33,4 +38,6 @@ dependencies {
     implementation files('C:/Users/mehanic/.gradle/caches/forge_gradle/deobf_dependencies/com/ldtteam/structurize/1.20.1-1.0.793-snapshot_mapped_official_1.20.1/structurize-1.20.1-1.0.793-snapshot_mapped_official_1.20.1.jar')
     implementation files('C:/Users/mehanic/.gradle/caches/forge_gradle/deobf_dependencies/com/ldtteam/blockui/1.20.1-1.0.190-snapshot_mapped_official_1.20.1/blockui-1.20.1-1.0.190-snapshot_mapped_official_1.20.1.jar')
     implementation files('C:/Users/mehanic/.gradle/caches/forge_gradle/deobf_dependencies/com/ldtteam/domum_ornamentum/1.20.1-1.0.288-snapshot_mapped_official_1.20.1/domum_ornamentum-1.20.1-1.0.288-snapshot_mapped_official_1.20.1-universal.jar')
+    // testImplementation 'junit:junit:4.13.2'
+    // testImplementation 'org.mockito:mockito-core:5.3.1'
 }
