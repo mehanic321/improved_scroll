@@ -27,6 +27,10 @@ To build the project, run:
 ```
 The output jar will be in `build/libs/`.
 
+## Author
+Mehanic321
+CurseForge: https://legacy.curseforge.com/minecraft/mc-mods/improved-resource-scroll
+
 ---
 
 # Improved Scroll (Русский)
@@ -59,5 +63,5 @@ The output jar will be in `build/libs/`.
 Готовый jar-файл будет находиться в папке `build/libs/`.
 
 ## Author
-Mehanic
-321
+Mehanic321
+CurseForge: https://legacy.curseforge.com/minecraft/mc-mods/improved-resource-scroll
